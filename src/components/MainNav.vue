@@ -32,6 +32,8 @@
           />
         </div>
       </div>
+
+      <sub-nav v-if="isLoggedIn" data-test="subnav" />
     </div>
   </header>
 </template>
@@ -39,10 +41,11 @@
 <script>
 import ActionButton from "./ActionButton.vue";
 import ProfileImage from "./ProfileImage.vue";
+import SubNav from "./SubNav.vue";
 
 export default {
   name: "MainNav",
-  components: { ActionButton, ProfileImage },
+  components: { ActionButton, ProfileImage, SubNav },
   data() {
     return {
       company: "Bobo Careers",
