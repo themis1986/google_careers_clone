@@ -10,6 +10,7 @@
           type="text"
           placeholder="Softare engineer"
           class="w-full text-lg font-normal focus:outline-none"
+          v-model="role"
         />
       </div>
       <span
@@ -22,6 +23,7 @@
           type="text"
           placeholder="Los Angeles"
           class="w-full text-lg font-normal focus:outline-none"
+          v-model="location"
         />
       </div>
     </div>
@@ -37,6 +39,12 @@ export default {
   name: "JobSearchForm",
   components: {
     ActionButton,
+  },
+  data() {
+    return {
+      role: "",
+      location: "",
+    };
   },
 };
 </script>
