@@ -9,8 +9,8 @@
         <input
           type="text"
           placeholder="Softare engineer"
-          class="w-full text-lg font-normal focus:outline-none"
           v-model="role"
+          class="w-full text-lg font-normal focus:outline-none"
         />
       </div>
       <span
@@ -22,8 +22,8 @@
         <input
           type="text"
           placeholder="Los Angeles"
-          class="w-full text-lg font-normal focus:outline-none"
           v-model="location"
+          class="w-full text-lg font-normal focus:outline-none"
         />
       </div>
     </div>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import ActionButton from "./ActionButton.vue";
+import ActionButton from "../shared/ActionButton.vue";
 
 export default {
   name: "JobSearchForm",
