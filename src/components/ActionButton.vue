@@ -34,11 +34,11 @@ export default {
 
 <style lang="postcss" scoped>
 button {
-  @apply px-5 py-3 font-medium rounded;
+  @apply px-5 py-3 font-medium;
 }
 
 .primary {
-  @apply text-white bg-brand-blue-1 hover:shadow-blue;
+  @apply rounded text-white bg-brand-blue-1 hover:shadow-blue;
 }
 
 .secondary {
