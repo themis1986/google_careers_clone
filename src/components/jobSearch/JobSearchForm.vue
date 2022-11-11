@@ -6,10 +6,7 @@
     <div class="flex flex-nowrap flex-1 h-full text-base font-light">
       <div class="relative flex items-center flex-1 h-full pr-3">
         <label class="absolute left-0 -top-10" for="">Role</label>
-        <TextInput
-          placeholder="Softare engineer"
-          @handleInput="updateRole($event)"
-        />
+        <TextInput v-model="role" placeholder="Softare engineer" />
       </div>
       <span
         class="flex items-center h-full px-3 border-l border-r border-brand-gray-3 bg-brand-gray-2"
@@ -17,10 +14,7 @@
       >
       <div class="relative flex items-center flex-1 h-full pl-3">
         <label class="absolute left-0 -top-10" for="">Where?</label>
-        <TextInput
-          placeholder="Los Angeles"
-          @handleInput="updateLocation($event)"
-        />
+        <TextInput v-model="location" placeholder="Los Angeles" />
       </div>
     </div>
 
