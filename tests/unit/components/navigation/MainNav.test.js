@@ -1,13 +1,22 @@
-import { shallowMount } from "@vue/test-utils";
+import { shallowMount, RouterLinkStub } from "@vue/test-utils";
 import MainNav from "@/components/navigation/MainNav.vue";
+
+const createConfig = () => ({
+  global: {
+    stubs: {
+      "router-link": RouterLinkStub,
+    },
+  },
+});
 
 describe("MainNav", () => {
   it("displays the company name", () => {
-    const wrapper = shallowMount(MainNav);
+    const wrapper = shallowMount(MainNav, createConfig());
+
     expect(wrapper.text()).toMatch("Bobo Careers");
   });
   it("displays menu items for navigation", () => {
-    const wrapper = shallowMount(MainNav);
+    const wrapper = shallowMount(MainNav, createConfig());
     const navigationMenuItems = wrapper.findAll(
       "[data-test='main-nav-list-item']"
     );
@@ -24,7 +33,7 @@ describe("MainNav", () => {
 
   describe("when user is logged out", () => {
     it("prompts user to sign in", () => {
-      const wrapper = shallowMount(MainNav);
+      const wrapper = shallowMount(MainNav, createConfig());
       const loginButton = wrapper.find("[data-test='login-button']");
       expect(loginButton.exists()).toBe(true);
     });
@@ -32,7 +41,7 @@ describe("MainNav", () => {
 
   describe("when user loggs in", () => {
     it("displays user profile image", async () => {
-      const wrapper = shallowMount(MainNav);
+      const wrapper = shallowMount(MainNav, createConfig());
       let profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(false);
 
@@ -44,7 +53,7 @@ describe("MainNav", () => {
     });
 
     it("displays subnavigation manu with additional information", async () => {
-      const wrapper = shallowMount(MainNav);
+      const wrapper = shallowMount(MainNav, createConfig());
       let subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(false);
 

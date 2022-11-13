@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668168302986" clover="3.2.0">
-  <project timestamp="1668168302986" name="All files">
-    <metrics statements="33" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="14" elements="47" coveredelements="47" complexity="0" loc="33" ncloc="33" packages="4" files="6" classes="6"/>
+<coverage generated="1668349437283" clover="3.2.0">
+  <project timestamp="1668349437283" name="All files">
+    <metrics statements="36" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="15" elements="51" coveredelements="51" complexity="0" loc="36" ncloc="36" packages="4" files="7" classes="7"/>
     <package name="components.jobSearch">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <file name="Headline.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/jobSearch/Headline.vue">
@@ -22,11 +22,11 @@
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
       <file name="MainNav.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/navigation/MainNav.vue">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="50" count="5" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
         <line num="66" count="7" type="stmt"/>
         <line num="74" count="2" type="stmt"/>
         <line num="77" count="1" type="stmt"/>
@@ -45,13 +45,19 @@
       </file>
     </package>
     <package name="components.shared">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="ActionButton.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/shared/ActionButton.vue">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="8" count="2" type="stmt"/>
         <line num="20" count="7" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
+      </file>
+      <file name="TextInput.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/shared/TextInput.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
     </package>
     <package name="utils">
