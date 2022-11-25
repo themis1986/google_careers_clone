@@ -73,12 +73,19 @@ export default {
   },
   methods: {
     async fetchJobs() {
-      const response = await axios.get("http://localhost:3000/jobs");
+      const baseUrl = process.env.VUE_APP_API_URL;
+      const response = await axios.get(`${baseUrl}/jobs`);
       const fetchedJobs = response.data;
       this.jobs = fetchedJobs;
       // console.log(this.jobs);
     },
   },
+  /*
+  THREE ENVIRONMENTS
+    - development (HMR) -- localhost:3000/jobs
+    - production        -- api.mycompany.com/jobs
+    - test
+  */
 };
 </script>
 
