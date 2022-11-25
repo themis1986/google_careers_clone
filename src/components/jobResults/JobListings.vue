@@ -1,5 +1,5 @@
 <template>
-  <main>job listings component</main>
+  <main class="flex-auto p-8 bg-brand-gray-2">job listings component</main>
 </template>
 
 <script>
