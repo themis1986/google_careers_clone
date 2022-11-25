@@ -53,7 +53,7 @@ export default {
     };
   },
   methods: {
-    searchForJobs(event) {
+    searchForJobs() {
       this.$router.push({
         name: "JobResults",
         query: {
