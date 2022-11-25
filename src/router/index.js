@@ -4,7 +4,7 @@ import JobResultsView from "@/views/JobResultsView.vue";
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: HomeView,
   },
