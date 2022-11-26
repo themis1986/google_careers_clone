@@ -1,8 +1,11 @@
 import { shallowMount, RouterLinkStub } from "@vue/test-utils";
 import MainNav from "@/components/navigation/MainNav.vue";
 
-const createConfig = () => ({
+const createConfig = ($store) => ({
   global: {
+    mocks: {
+      $store,
+    },
     stubs: {
       "router-link": RouterLinkStub,
     },
@@ -11,12 +14,23 @@ const createConfig = () => ({
 
 describe("MainNav", () => {
   it("displays the company name", () => {
-    const wrapper = shallowMount(MainNav, createConfig());
+    const $store = {
+      state: {
+        isLoggedIn: false,
+      },
+    };
+    const wrapper = shallowMount(MainNav, createConfig($store));
 
     expect(wrapper.text()).toMatch("Bobo Careers");
   });
   it("displays menu items for navigation", () => {
-    const wrapper = shallowMount(MainNav, createConfig());
+    const $store = {
+      state: {
+        isLoggedIn: false,
+      },
+    };
+
+    const wrapper = shallowMount(MainNav, createConfig($store));
     const navigationMenuItems = wrapper.findAll(
       "[data-test='main-nav-list-item']"
     );
@@ -33,34 +47,67 @@ describe("MainNav", () => {
 
   describe("when user is logged out", () => {
     it("prompts user to sign in", () => {
-      const wrapper = shallowMount(MainNav, createConfig());
+      const $store = {
+        state: {
+          isLoggedIn: false,
+        },
+      };
+
+      const wrapper = shallowMount(MainNav, createConfig($store));
       const loginButton = wrapper.find("[data-test='login-button']");
       expect(loginButton.exists()).toBe(true);
     });
-  });
 
-  describe("when user loggs in", () => {
-    it("displays user profile image", async () => {
-      const wrapper = shallowMount(MainNav, createConfig());
-      let profileImage = wrapper.find("[data-test='profile-image']");
-      expect(profileImage.exists()).toBe(false);
-
+    it("issues call to Vuex to login user", async () => {
+      const commit = jest.fn();
+      const $store = {
+        state: {
+          isLoggedIn: false,
+        },
+        commit,
+      };
+      const wrapper = shallowMount(MainNav, createConfig($store));
       const loginButton = wrapper.find("[data-test='login-button']");
       await loginButton.trigger("click");
 
-      profileImage = wrapper.find("[data-test='profile-image']");
+      expect(commit).toHaveBeenCalledWith("LOGIN_USER");
+    });
+  });
+
+  describe("when user is logged in", () => {
+    it("displays user profile image", async () => {
+      const $store = {
+        state: {
+          isLoggedIn: true,
+        },
+      };
+
+      const wrapper = shallowMount(MainNav, createConfig($store));
+      // let profileImage = wrapper.find("[data-test='profile-image']");
+      // expect(profileImage.exists()).toBe(false);
+
+      // const loginButton = wrapper.find("[data-test='login-button']");
+      // await loginButton.trigger("click");
+
+      const profileImage = wrapper.find("[data-test='profile-image']");
       expect(profileImage.exists()).toBe(true);
     });
 
     it("displays subnavigation manu with additional information", async () => {
-      const wrapper = shallowMount(MainNav, createConfig());
-      let subnav = wrapper.find("[data-test='subnav']");
-      expect(subnav.exists()).toBe(false);
+      const $store = {
+        state: {
+          isLoggedIn: true,
+        },
+      };
 
-      const loginButton = wrapper.find("[data-test='login-button']");
-      await loginButton.trigger("click");
+      const wrapper = shallowMount(MainNav, createConfig($store));
+      // let subnav = wrapper.find("[data-test='subnav']");
+      // expect(subnav.exists()).toBe(false);
 
-      subnav = wrapper.find("[data-test='subnav']");
+      // const loginButton = wrapper.find("[data-test='login-button']");
+      // await loginButton.trigger("click");
+
+      const subnav = wrapper.find("[data-test='subnav']");
       expect(subnav.exists()).toBe(true);
     });
   });
