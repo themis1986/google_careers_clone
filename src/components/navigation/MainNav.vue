@@ -9,6 +9,10 @@
           class="flex items-center h-full text-xl"
           >Bobo Careers</router-link
         >
+        <pre>
+    {{ isLoggedIn }}
+  </pre
+        >
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
             <li
@@ -32,7 +36,7 @@
             data-test="login-button"
             text="Sign in"
             type="primary"
-            @click="loginUser"
+            @click="LOGIN_USER()"
           />
         </div>
       </div>
@@ -46,7 +50,8 @@
 import ActionButton from "../shared/ActionButton.vue";
 import ProfileImage from "./ProfileImage.vue";
 import SubNav from "./SubNav.vue";
-import { LOGIN_USER } from "@/store";
+// import { LOGIN_USER } from "@/store";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "MainNav",
@@ -82,20 +87,22 @@ export default {
     };
   },
   computed: {
+    ...mapState(["isLoggedIn"]),
     headerHeightClass() {
       return {
         "h-16": !this.isLoggedIn,
         "h-32": this.isLoggedIn,
       };
     },
-    isLoggedIn() {
-      return this.$store.state.isLoggedIn;
-    },
+    // isLoggedIn() {
+    //   return this.$store.state.isLoggedIn;
+    // },
   },
   methods: {
-    loginUser() {
-      this.$store.commit(LOGIN_USER);
-    },
+    ...mapMutations(["LOGIN_USER"]),
+    // LOGIN_USER() {
+    //   this.$store.commit(LOGIN_USER);
+    // },
   },
 };
 </script>
