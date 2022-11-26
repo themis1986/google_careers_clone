@@ -7,8 +7,8 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --coverage",
     "lint": "vue-cli-service lint",
-    "test:watch": "vue-cli-service test:unit --watch",
-    "server": "json-server -w ./db.json"
+    "server": "json-server -w ./db.json",
+    "test:watch": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -17,13 +17,15 @@
     "axios": "^1.2.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
     "@vue/cli-plugin-eslint": "~4.5.15",
     "@vue/cli-plugin-router": "^4.5.19",
     "@vue/cli-plugin-unit-jest": "~4.5.15",
+    "@vue/cli-plugin-vuex": "^5.0.8",
     "@vue/cli-service": "~4.5.15",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",

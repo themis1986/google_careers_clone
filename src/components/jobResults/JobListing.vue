@@ -16,9 +16,9 @@
           <div class="">
             <ul>
               <li
-                class="inline-block mr-5"
                 v-for="loc in job.locations"
                 :key="loc"
+                class="inline-block mr-5"
               >
                 {{ loc }}
               </li>
