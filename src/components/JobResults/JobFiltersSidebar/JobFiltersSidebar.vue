@@ -9,8 +9,9 @@
           <ActionButton text="Clear Filters" type="secondary" />
         </div>
       </div>
+      <accordion header="Degree" />
       <accordion header="Job types">
-        <p>placeholder</p>
+        <p>Placeholder for now</p>
       </accordion>
       <accordion header="Organizations">
         <div class="mt-5">

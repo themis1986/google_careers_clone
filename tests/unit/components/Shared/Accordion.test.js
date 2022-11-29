@@ -24,4 +24,26 @@ describe("Accordion", () => {
 
     expect(wrapper.text()).toMatch("My nested child");
   });
+
+  describe("when we do not provide custom child component", () => {
+    it("renders default child", async () => {
+      const wrapper = mount(Accordion, {
+        global: {
+          stubs: {
+            FontAwesomeIcon: true,
+          },
+        },
+        props: {
+          header: "Test Header",
+        },
+      });
+
+      expect(wrapper.text()).not.toMatch("My nested child");
+
+      const clickableArea = wrapper.find("[data-test='clickable-area']");
+      await clickableArea.trigger("click");
+
+      expect(wrapper.text()).toMatch("Default content from within the slot");
+    });
+  });
 });

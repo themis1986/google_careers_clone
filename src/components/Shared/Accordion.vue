@@ -9,7 +9,9 @@
       <font-awesome-icon :icon="carretIcon" />
     </div>
     <div v-if="isOpen" class="w-full mt-5">
-      <slot></slot>
+      <slot>
+        <p>Default content from within the slot</p>
+      </slot>
     </div>
   </div>
 </template>
