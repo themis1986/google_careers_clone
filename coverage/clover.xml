@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669723363447" clover="3.2.0">
-  <project timestamp="1669723363447" name="All files">
-    <metrics statements="32" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12" elements="44" coveredelements="44" complexity="0" loc="32" ncloc="32" packages="6" files="8" classes="8"/>
+<coverage generated="1669726452789" clover="3.2.0">
+  <project timestamp="1669726452789" name="All files">
+    <metrics statements="36" coveredstatements="35" conditionals="2" coveredconditionals="1" methods="15" coveredmethods="14" elements="53" coveredelements="50" complexity="0" loc="36" ncloc="36" packages="6" files="9" classes="9"/>
     <package name="api">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="getJobs.js" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/api/getJobs.js">
+      <file name="getJobs.js" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/api/getJobs.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -14,7 +14,7 @@
     </package>
     <package name="components.JobResults">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="JobListing.vue" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/components/JobResults/JobListing.vue">
+      <file name="JobListing.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/JobResults/JobListing.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="64" count="2" type="stmt"/>
         <line num="74" count="5" type="stmt"/>
@@ -22,26 +22,33 @@
     </package>
     <package name="components.Navigation">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="ProfileImage.vue" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/components/Navigation/ProfileImage.vue">
+      <file name="ProfileImage.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/Navigation/ProfileImage.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="2" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
       </file>
-      <file name="Subnav.vue" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/components/Navigation/Subnav.vue">
+      <file name="Subnav.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/Navigation/Subnav.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="13" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.Shared">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="ActionButton.vue" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/components/Shared/ActionButton.vue">
+      <metrics statements="9" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="5"/>
+      <file name="Accordion.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/Shared/Accordion.vue">
+        <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="32" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="ActionButton.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/Shared/ActionButton.vue">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="8" count="3" type="stmt"/>
         <line num="20" count="7" type="stmt"/>
         <line num="26" count="3" type="stmt"/>
       </file>
-      <file name="TextInput.vue" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/components/Shared/TextInput.vue">
+      <file name="TextInput.vue" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/components/Shared/TextInput.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="12" count="2" type="stmt"/>
         <line num="28" count="5" type="stmt"/>
@@ -49,7 +56,7 @@
     </package>
     <package name="store">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-      <file name="index.js" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/store/index.js">
+      <file name="index.js" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/store/index.js">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
@@ -67,7 +74,7 @@
     </package>
     <package name="utils">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="nextElementInList.js" path="/home/thiakovidis/Downloads/job-search-end-of-section-21/job-search-end-of-section-21/src/utils/nextElementInList.js">
+      <file name="nextElementInList.js" path="/home/thiakovidis/Desktop/vue_boris_masterclass/job-search/src/utils/nextElementInList.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
