@@ -2,13 +2,7 @@
   <header :class="['w-full', 'text-sm', headerHeightClass]">
     <div class="fixed top-0 left-0 w-full h-16 bg-white">
       <div
-        class="
-          flex flex-nowrap
-          h-full
-          px-8
-          mx-auto
-          border-b border-solid border-brand-gray-1
-        "
+        class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
         <router-link
           :to="{ name: 'Home' }"
@@ -68,7 +62,7 @@ export default {
   data() {
     return {
       menuItems: [
-        { text: "Teams", url: "/" },
+        { text: "Teams", url: "/teams" },
         { text: "Locations", url: "/" },
         { text: "Life at Bobo", url: "/" },
         { text: "How we hire", url: "/" },
