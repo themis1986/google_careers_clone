@@ -1,7 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-// import HomeView from "@/views/HomeView.vue";
-// import JobResultsView from "@/views/JobResultsView.vue";
-// import JobView from "@/views/JobView.vue";
 
 const HomeView = () => import("@/views/HomeView.vue");
 const JobResultsView = () =>
@@ -22,7 +19,7 @@ const routes = [
   },
   {
     path: "/jobs/results/:id",
-    name: "JobView",
+    name: "JobListing",
     component: JobView,
   },
 ];
