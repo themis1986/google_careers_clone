@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <section class="flex flex-col h-screen pt-10 pb-20">
+  <main class="flex flex-col h-screen">
+    <section class="flex flex-col pt-10 pb-20">
       <div class="grid grid-cols-12">
         <div class="col-start-1 col-span-1"></div>
 
@@ -19,18 +19,40 @@
         <div class="col-start-12 col-span-1"></div>
       </div>
     </section>
+    <spotlight class="flex flex-row justify-center pb-16">
+      <template #default="{ img, title, description }">
+        <!-- { spotlight: {...}, ... } -->
+        <router-link
+          to="/jobs/results"
+          class="flex flex-col mx-5 border rounded-lg w-72 bg-brand-gray-2 h-96"
+        >
+          <img class="object-contain" :src="img" alt="" />
+          <div class="h-48 px-6 py-4 mt-3">
+            <h3 class="text-lg font-medium">{{ title }}</h3>
+            <p class="text-sm mt-3">{{ description }}</p>
+          </div>
+          <router-link
+            to="/jobs/results"
+            class="p-6 pb-4 text-sm text-brand-blue-1"
+            >See jobs</router-link
+          >
+        </router-link>
+      </template>
+    </spotlight>
   </main>
 </template>
 
 <script>
 import Headline from "@/components/JobSearch/Headline.vue";
 import JobSearchForm from "@/components/JobSearch/JobSearchForm.vue";
+import Spotlight from "./Spotlight.vue";
 
 export default {
   name: "Hero",
   components: {
     Headline,
     JobSearchForm,
+    Spotlight,
   },
 };
 </script>
