@@ -1,9 +1,9 @@
 import {
   UNIQUE_ORGANIZATIONS,
-  FILTERED_JOBS_BY_ORGANIZATIONS,
   UNIQUE_JOB_TYPES,
-  FILTERED_JOBS_BY_JOB_TYPES,
   FILTERED_JOBS,
+  INCLUDE_JOB_BY_ORGANIZATION,
+  INCLUDE_JOB_BY_JOB_TYPE,
 } from "@/store/constants";
 
 const getters = {
@@ -12,43 +12,24 @@ const getters = {
     state.jobs.forEach((job) => uniqueOrganizations.add(job.organization));
     return uniqueOrganizations;
   },
-  [FILTERED_JOBS_BY_ORGANIZATIONS](state) {
-    const filteredJobs =
-      state.selectedOrganizations.length > 0
-        ? state.jobs.filter((job) =>
-            state.selectedOrganizations.includes(job.organization)
-          )
-        : state.jobs;
-    return filteredJobs;
-  },
   [UNIQUE_JOB_TYPES](state) {
     const uniqueJobTypes = new Set();
     state.jobs.forEach((job) => uniqueJobTypes.add(job.jobType));
     return uniqueJobTypes;
   },
-  [FILTERED_JOBS_BY_JOB_TYPES](state) {
-    const filteredJobs =
-      state.selectedJobTypes.length > 0
-        ? state.jobs.filter((job) =>
-            state.selectedJobTypes.includes(job.jobType)
-          )
-        : state.jobs;
-    return filteredJobs;
+  [INCLUDE_JOB_BY_ORGANIZATION]: (state) => (job) => {
+    if (state.selectedOrganizations.length === 0) return true;
+    return state.selectedOrganizations.includes(job.organization);
   },
-  [FILTERED_JOBS](state) {
-    const noSelectedOrganizations = state.selectedOrganizations.length === 0;
-    const noSelectedJobTypes = state.selectedJobTypes.length === 0;
-    if (noSelectedJobTypes && noSelectedOrganizations) return state.jobs;
-
+  [INCLUDE_JOB_BY_JOB_TYPE]: (state) => (job) => {
+    if (state.selectedJobTypes.length === 0) return true;
+    return state.selectedJobTypes.includes(job.jobType);
+  },
+  [FILTERED_JOBS](state, getters) {
     return state.jobs
-      .filter((job) => {
-        if (noSelectedOrganizations) return true;
-        return state.selectedOrganizations.includes(job.organization);
-      })
-      .filter((job) => {
-        if (noSelectedJobTypes) return true;
-        return state.selectedJobTypes.includes(job.jobType);
-      });
+      .filter((job) => getters.INCLUDE_JOB_BY_ORGANIZATION(job))
+      .filter((job) => getters.INCLUDE_JOB_BY_JOB_TYPE(job));
   },
 };
+
 export default getters;

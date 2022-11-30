@@ -17,9 +17,7 @@
               :data-test="jobType"
               @change="selectJobType"
             />
-            <label :for="jobType" data-test="job-type">{{
-              jobType
-            }}</label>
+            <label :for="jobType" data-test="job-type">{{ jobType }}</label>
           </li>
         </ul>
       </fieldset>
@@ -28,16 +26,17 @@
 </template>
 
 <script>
-import Accordion from "@/components/Shared/Accordion.vue";
-import {
-    UNIQUE_JOB_TYPES,
-    ADD_SELECTED_JOB_TYPES,
-} from "@/store/constants";
 import { mapGetters, mapMutations } from "vuex";
+
+import { UNIQUE_JOB_TYPES, ADD_SELECTED_JOB_TYPES } from "@/store/constants";
+
+import Accordion from "@/components/Shared/Accordion.vue";
 
 export default {
   name: "JobFiltersSidebarJobTypes",
-  components: { Accordion },
+  components: {
+    Accordion,
+  },
   data() {
     return {
       selectedJobTypes: [],
@@ -50,12 +49,8 @@ export default {
     ...mapMutations([ADD_SELECTED_JOB_TYPES]),
     selectJobType() {
       this.ADD_SELECTED_JOB_TYPES(this.selectedJobTypes);
+      this.$router.push({ name: "JobResults" });
     },
   },
-  // UNIQUE_ORGANIZATIONS() {
-  //   return this.$store.getters.UNIQUE_ORGANIZATIONS;
-  // },
 };
 </script>
-
-<style></style>

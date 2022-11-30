@@ -28,13 +28,20 @@
 </template>
 
 <script>
-import Accordion from "@/components/Shared/Accordion.vue";
-import { UNIQUE_ORGANIZATIONS, ADD_SELECTED_ORGANIZATIONS } from "@/store/constants";
 import { mapGetters, mapMutations } from "vuex";
 
+import {
+  UNIQUE_ORGANIZATIONS,
+  ADD_SELECTED_ORGANIZATIONS,
+} from "@/store/constants";
+
+import Accordion from "@/components/Shared/Accordion.vue";
+
 export default {
-  name: "JobFiltersSidebarOrganiations",
-  components: { Accordion },
+  name: "JobFiltersSidebarOrganizations",
+  components: {
+    Accordion,
+  },
   data() {
     return {
       selectedOrganizations: [],
@@ -47,12 +54,8 @@ export default {
     ...mapMutations([ADD_SELECTED_ORGANIZATIONS]),
     selectOrganization() {
       this.ADD_SELECTED_ORGANIZATIONS(this.selectedOrganizations);
+      this.$router.push({ name: "JobResults" });
     },
   },
-  // UNIQUE_ORGANIZATIONS() {
-  //   return this.$store.getters.UNIQUE_ORGANIZATIONS;
-  // },
 };
 </script>
-
-<style></style>

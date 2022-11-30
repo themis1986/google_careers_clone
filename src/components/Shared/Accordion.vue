@@ -6,11 +6,12 @@
       @click="open"
     >
       <h3 class="text-base font-semibold">{{ header }}</h3>
-      <font-awesome-icon :icon="carretIcon" />
+      <font-awesome-icon :icon="caretIcon" />
     </div>
+
     <div v-if="isOpen" class="w-full mt-5">
       <slot>
-        <p>Default content from within the slot</p>
+        <p>Whoops, somebody forgot to populate me!</p>
       </slot>
     </div>
   </div>
@@ -31,7 +32,7 @@ export default {
     };
   },
   computed: {
-    carretIcon() {
+    caretIcon() {
       return this.isOpen ? ["fas", "angle-up"] : ["fas", "angle-down"];
     },
   },
@@ -42,5 +43,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

@@ -1,5 +1,4 @@
 import actions from "@/store/actions";
-
 import getJobs from "@/api/getJobs";
 jest.mock("@/api/getJobs");
 

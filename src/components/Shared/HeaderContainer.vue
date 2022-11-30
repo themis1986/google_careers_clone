@@ -12,5 +12,3 @@ export default {
   name: "HeaderContainer",
 };
 </script>
-
-<style lang="scss" scoped></style>

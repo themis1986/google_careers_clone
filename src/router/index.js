@@ -5,7 +5,6 @@ const JobResultsView = () =>
   import(/* webpackChunkName: "jobs" */ "@/views/JobResultsView.vue");
 const JobView = () =>
   import(/* webpackChunkName: "jobs" */ "@/views/JobView.vue");
-
 const TeamsView = () => import("@/views/TeamsView.vue");
 
 const routes = [
