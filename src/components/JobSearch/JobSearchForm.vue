@@ -1,14 +1,6 @@
 <template>
   <form
-    class="
-      flex
-      items-center
-      w-full
-      h-12
-      mt-14
-      border border-solid border-brand-gray-3
-      rounded-3xl
-    "
+    class="flex items-center w-full h-12 mt-14 border border-solid border-brand-gray-3 rounded-3xl"
     @submit.prevent="searchForJobs"
   >
     <font-awesome-icon :icon="['fas', 'search']" class="ml-4 mr-3" />
@@ -24,14 +16,7 @@
       </div>
 
       <span
-        class="
-          flex
-          items-center
-          h-full
-          px-3
-          border-l border-r border-brand-gray-3
-          bg-brand-gray-2
-        "
+        class="flex items-center h-full px-3 border-l border-r border-brand-gray-3 bg-brand-gray-2"
         >in</span
       >
 
@@ -55,6 +40,8 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import TextInput from "@/components/Shared/TextInput.vue";
 
@@ -64,19 +51,20 @@ export default {
     ActionButton,
     TextInput,
   },
-  data() {
-    return {
-      role: "",
-      location: "",
-    };
-  },
-  methods: {
-    searchForJobs() {
-      this.$router.push({
+  setup() {
+    const role = ref("");
+    const location = ref("");
+
+    const router = useRouter();
+
+    const searchForJobs = () => {
+      router.push({
         name: "JobResults",
-        query: { role: this.role, location: this.location },
+        query: { role: role.value, location: location.value },
       });
-    },
+    };
+
+    return { role, location, searchForJobs };
   },
 };
 </script>
