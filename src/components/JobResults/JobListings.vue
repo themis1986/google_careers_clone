@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
-import { FETCH_JOBS } from "@/store";
+import { FETCH_JOBS, FILTERED_JOBS_BY_ORGANIZATIONS } from "@/store";
 import JobListing from "@/components/JobResults/JobListing.vue";
 
 export default {
@@ -67,7 +67,8 @@ export default {
       const lastJobIndex = pageNumber * 10;
       return this.jobs.slice(firstJobIndex, lastJobIndex);
     },
-    ...mapState(["jobs"]),
+    // ...mapState(["jobs"]),
+    ...mapGetters({ jobs: FILTERED_JOBS_BY_ORGANIZATIONS }),
   },
   async mounted() {
     this.FETCH_JOBS();
